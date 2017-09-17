@@ -20,11 +20,17 @@ public class LongestIncreasingSubsequence {
 	}
 	
 	private int getLisLength(int[] sequence, int[] lis) {
+	    int current_max = sequence[0];
 	    for (int i=1; i < sequence.length; i++) {
-	        if(sequence[i] > sequence[i-1])
+	        if(sequence[i] > sequence[i-1] && sequence[i] > current_max)
 	            lis[i] = lis[i] + lis[i-1];
 	        else
 	             lis[i] = lis[i-1];
+	        if(sequence[i] > current_max)
+	            current_max = sequence[i];
+	    }
+	    for (int i = 0; i< lis.length ; i++) {
+	        System.out.println(lis[i]);
 	    }
 	    return lis[lis.length-1];
 	}
