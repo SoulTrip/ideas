@@ -29,9 +29,6 @@ public class LongestIncreasingSubsequence {
 	        if(sequence[i] > current_max)
 	            current_max = sequence[i];
 	    }
-	    for (int i = 0; i< lis.length ; i++) {
-	        System.out.println(lis[i]);
-	    }
 	    return lis[lis.length-1];
 	}
 }
